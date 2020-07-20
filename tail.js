@@ -5,3 +5,19 @@ const assertEqual = function(actual, expected) {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
+
+const tail = function(array) {
+  return array.slice(1);
+};
+
+
+// Test Case: Check the original array 
+const words = ["Yo Yo", "Lighthouse", "Labs"];
+tail(words); // no need to capture the return value since we are not checking it
+assertEqual(words.length, 3); // original array should still have 3 elements!
+
+const result = tail(words);
+console.log(result);
+assertEqual(result[0], "Lighthouse");
+assertEqual(result[1], "Labs");
+
