@@ -11,7 +11,7 @@ const head = function(array) {
     return undefined;
   }
   return array[0];
-}
+};
 
 assertEqual(2, head([2,3,4]));
 assertEqual("house", head(["house","apartment","condo"]));
