@@ -6,8 +6,21 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const eqObjects = (objectA, objectB) => {
+/*
+  function eqObjects(a, b):
+    if a keys and b keys do not have the same length
+      return false
+    loop through a keys:
+      if a key's value is different from b key
+        return false
+    return true
+    
+*/
 
+const eqObjects = (objectA, objectB) => {
+  if (Object.keys(objectA).length != Object.keys(objectB).length) {
+    return false;
+  }
 };
 
 const ab = { a: "1", b: "2" };
