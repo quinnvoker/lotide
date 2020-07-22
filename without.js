@@ -33,10 +33,10 @@ const assertArraysEqual = function(arrayA, arrayB) {
       if element === item
         return true
     return false
-*/ 
+*/
 
 const without = function(array, items) {
-  output = [];
+  let output = [];
   for (let element of array) {
     if (contains(items, element)) {
       continue;
@@ -48,7 +48,7 @@ const without = function(array, items) {
 
 // I know I could have used Array.prototype.includes
 // but I wanted a little extra practice :)
-const contains = function (array, item) {
+const contains = function(array, item) {
   for (let element of array) {
     if (element === item) {
       return true;
