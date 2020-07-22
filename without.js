@@ -38,7 +38,7 @@ const assertArraysEqual = function(arrayA, arrayB) {
 const without = function(array, items) {
   output = [];
   for (let element of array) {
-    if (contains(array, items)) {
+    if (contains(items, element)) {
       continue;
     }
     output.push(element);
@@ -46,6 +46,8 @@ const without = function(array, items) {
   return output;
 };
 
+// I know I could have used Array.prototype.includes
+// but I wanted a little extra practice :)
 const contains = function (array, item) {
   for (let element of array) {
     if (element === item) {
@@ -54,3 +56,11 @@ const contains = function (array, item) {
   }
   return false;
 };
+
+const words = ["hello", "world", "lighthouse"];
+without(words, ["lighthouse"]); // no need to capture return value for this test case
+// Make sure the original array was not altered by the without function
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+
+assertArraysEqual(without(words, ["lighthouse", "world"]), ["hello"]);
+assertArraysEqual(without([1, 2, 3, 4, 5], [1, 3, 5]), [2, 4]);
