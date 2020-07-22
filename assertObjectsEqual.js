@@ -11,14 +11,14 @@ const eqArrays = function(arrayA, arrayB) {
 };
 
 const eqObjects = (objectA, objectB) => {
-  if (Object.keys(objectA).length != Object.keys(objectB).length) {
+  if (Object.keys(objectA).length !== Object.keys(objectB).length) {
     return false;
   }
   for (let key of Object.keys(objectA)) {
     const valueA = objectA[key];
     const valueB = objectB[key];
     if (valueA !== valueB) {
-      if(Array.isArray(valueA) && Array.isArray(valueB) && eqArrays(valueA, valueB)) {
+      if (Array.isArray(valueA) && Array.isArray(valueB) && eqArrays(valueA, valueB)) {
         continue;
       }
       //TODO: add recursive case for nested objects
@@ -29,10 +29,11 @@ const eqObjects = (objectA, objectB) => {
 };
 
 const assertObjectsEqual = (actual, expected) => {
+  const inspect = require('util').inspect;
   if (eqObjects(actual, expected)) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+    console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
   }
 };
 

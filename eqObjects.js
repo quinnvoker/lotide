@@ -30,14 +30,14 @@ const eqArrays = function(arrayA, arrayB) {
 */
 
 const eqObjects = (objectA, objectB) => {
-  if (Object.keys(objectA).length != Object.keys(objectB).length) {
+  if (Object.keys(objectA).length !== Object.keys(objectB).length) {
     return false;
   }
   for (let key of Object.keys(objectA)) {
     const valueA = objectA[key];
     const valueB = objectB[key];
     if (valueA !== valueB) {
-      if(Array.isArray(valueA) && Array.isArray(valueB) && eqArrays(valueA, valueB)) {
+      if (Array.isArray(valueA) && Array.isArray(valueB) && eqArrays(valueA, valueB)) {
         continue;
       }
       //TODO: add recursive case for nested objects

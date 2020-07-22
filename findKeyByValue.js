@@ -27,7 +27,7 @@ const family = {
   father: 'Joe',
   mother: 'Corrine',
   child: 'Rowan',
-}
+};
 
 assertEqual(findKeyByValue(family, "Joe"), "father");
 assertEqual(findKeyByValue(family, "Rowan"), "child");
