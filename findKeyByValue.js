@@ -22,3 +22,12 @@ const bestTVShowsByGenre = {
 
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+
+const family = {
+  father: 'Joe',
+  mother: 'Corrine',
+  child: 'Rowan',
+}
+
+assertEqual(findKeyByValue(family, "Joe"), "father");
+assertEqual(findKeyByValue(family, "Rowan"), "child");
