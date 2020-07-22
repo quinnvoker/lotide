@@ -6,8 +6,20 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+/*
+  function countLetters(string):
+    result = {}
+    for each character in string
+      if result does not have character yet:
+        set value of key [character] to 1
+      else:
+        increment value of key [character] by 1
+    return result
+*/
+
 const countLetters = (string) => {
   const result = {};
+  
   return result;
 };
 
