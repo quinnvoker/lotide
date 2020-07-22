@@ -21,6 +21,12 @@ const eqObjects = (objectA, objectB) => {
   if (Object.keys(objectA).length != Object.keys(objectB).length) {
     return false;
   }
+  for (let key of Object.keys(objectA)) {
+    if (objectA[key] !== objectB[key]) {
+      return false;
+    }
+  }
+  return true;
 };
 
 const ab = { a: "1", b: "2" };
