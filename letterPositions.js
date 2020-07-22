@@ -34,7 +34,7 @@ const letterPositions = (string) => {
   const result = {};
   for (let i = 0; i < string.length; i++) {
     const char = string[i];
-    if(!result[char]) {
+    if (!result[char]) {
       result[char] = [i];
     } else {
       result[char].push(i);
