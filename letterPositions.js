@@ -34,6 +34,9 @@ const letterPositions = (string) => {
   const result = {};
   for (let i = 0; i < string.length; i++) {
     const char = string[i];
+    if (char === " ") {
+      continue;
+    }
     if (!result[char]) {
       result[char] = [i];
     } else {
@@ -43,7 +46,7 @@ const letterPositions = (string) => {
   return result;
 };
 
-const testString = 'hello';
+const testString = 'hello ';
 const positions = letterPositions(testString);
 assertArraysEqual(positions.h, [0]);
 assertArraysEqual(positions.e, [1]);
