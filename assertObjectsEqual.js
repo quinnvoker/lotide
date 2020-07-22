@@ -28,6 +28,12 @@ const eqObjects = (objectA, objectB) => {
   return true;
 };
 
-const assertObjectsEqual = (actual, expected) {
-
+const assertObjectsEqual = (actual, expected) => {
+  if (eqObjects(actual, expected)) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+  }
 };
+
+assertObjectsEqual({a: 5}, {a: 5});
