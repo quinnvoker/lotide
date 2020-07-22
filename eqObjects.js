@@ -6,6 +6,18 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+const eqArrays = function(arrayA, arrayB) {
+  if (arrayA.length !== arrayB.length) {
+    return false;
+  }
+  for (let i = 0; i < arrayA.length; i++) {
+    if (arrayA[i] !== arrayB[i]) {
+      return false;
+    }
+  }
+  return true;
+};
+
 /*
   function eqObjects(a, b):
     if a keys and b keys do not have the same length
