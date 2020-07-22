@@ -34,7 +34,13 @@ const eqObjects = (objectA, objectB) => {
     return false;
   }
   for (let key of Object.keys(objectA)) {
-    if (objectA[key] !== objectB[key]) {
+    const valueA = objectA[key];
+    const valueB = objectB[key];
+    if (valueA !== valueB) {
+      if(Array.isArray(valueA) && Array.isArray(valueB) && eqArrays(valueA, valueB)) {
+        continue;
+      }
+      //TODO: add recursive case for nested objects
       return false;
     }
   }
