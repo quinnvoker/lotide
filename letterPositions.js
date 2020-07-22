@@ -19,6 +19,17 @@ const assertArraysEqual = function(arrayA, arrayB) {
   }
 };
 
+/*
+  function letterPositions(string):
+    result = {};
+    for character in string (with index i)
+      if result does not have character
+        add [i] to character property
+      else
+        push i to character property
+    return result
+*/
+
 const letterPositions = (string) => {
   const result = {};
   return result;
