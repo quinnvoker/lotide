@@ -34,3 +34,23 @@ const assertArraysEqual = function(arrayA, arrayB) {
         return true
     return false
 */ 
+
+const without = function(array, items) {
+  output = [];
+  for (let element of array) {
+    if (contains(array, items)) {
+      continue;
+    }
+    output.push(element);
+  }
+  return output;
+};
+
+const contains = function (array, item) {
+  for (let element of array) {
+    if (element === item) {
+      return true;
+    }
+  }
+  return false;
+};
