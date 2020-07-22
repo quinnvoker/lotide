@@ -23,9 +23,8 @@ const assertArraysEqual = function(arrayA, arrayB) {
   function without(array, items to remove):
     output = []
     for element of array
-      if contains(array, element)
-        continue
-      add element to output
+      if !contains(items to remove, element)
+        add element to output
     return output
         
   function contains(array, item):
@@ -38,10 +37,9 @@ const assertArraysEqual = function(arrayA, arrayB) {
 const without = function(array, items) {
   let output = [];
   for (let element of array) {
-    if (contains(items, element)) {
-      continue;
+    if (!contains(items, element)) {
+      output.push(element);
     }
-    output.push(element);
   }
   return output;
 };
