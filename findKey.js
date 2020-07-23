@@ -7,7 +7,11 @@ const assertEqual = function(actual, expected) {
 };
 
 const findKey = (object, callback) => {
-
+  for (const key of Object.keys(object)) {
+    if (callback(object[key])) {
+      return key;
+    }
+  }
 };
 
 const player = {
