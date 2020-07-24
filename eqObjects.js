@@ -33,14 +33,17 @@ const eqObjects = (objectA, objectB) => {
   if (Object.keys(objectA).length !== Object.keys(objectB).length) {
     return false;
   }
-  for (let key of Object.keys(objectA)) {
+  for (const key in objectA) {
     const valueA = objectA[key];
     const valueB = objectB[key];
     if (valueA !== valueB) {
-      if (Array.isArray(valueA) && Array.isArray(valueB) && eqArrays(valueA, valueB)) {
-        continue;
+      if (typeof valueA === 'object' && typeof valueB === 'object') {
+        if (Array.isArray(valueA) && Array.isArray(valueB) && eqArrays(valueA, valueB)) {
+          continue;
+        } else if (!Array.isArray(valueA) && !Array.isArray(valueB) && eqObjects(valueA, valueB)) {
+          continue;
+        }
       }
-      //TODO: add recursive case for nested objects
       return false;
     }
   }
@@ -73,3 +76,7 @@ const nestedObjB = { c: 2, a: { b: "1"} };
 const nestedObjC = { a: { b: "2"}, c: 2 };
 assertEqual(eqObjects(nestedObjA, nestedObjB), true);
 assertEqual(eqObjects(nestedObjA, nestedObjC), false);
+
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
