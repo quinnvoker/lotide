@@ -49,19 +49,27 @@ const eqObjects = (objectA, objectB) => {
 
 
 // primitive tests
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true);
+
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// assertEqual(eqObjects(ab, ba), true);
 
 
-const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc), false);
+// const abc = { a: "1", b: "2", c: "3" };
+// assertEqual(eqObjects(ab, abc), false);
 
 // array tests
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true);
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertEqual(eqObjects(cd, dc), true);
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// assertEqual(eqObjects(cd, cd2), false);
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false);
+// // object tests
+
+const nestedObjA = { a: { b: "1"}, c: 2 };
+const nestedObjB = { c: 2, a: { b: "1"} };
+const nestedObjC = { a: { b: "2"}, c: 2 };
+assertEqual(eqObjects(nestedObjA, nestedObjB), true);
+assertEqual(eqObjects(nestedObjA, nestedObjC), false);
