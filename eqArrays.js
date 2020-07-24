@@ -22,6 +22,9 @@ const eqArrays = function(arrayA, arrayB) {
   }
   for (let i = 0; i < arrayA.length; i++) {
     if (arrayA[i] !== arrayB[i]) {
+      if (Array.isArray(arrayA[i]) && Array.isArray(arrayB[i]) && eqArrays(arrayA[i], arrayB[i])) {
+        continue;
+      }
       return false;
     }
   }
@@ -29,3 +32,10 @@ const eqArrays = function(arrayA, arrayB) {
 };
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+
+// recursive tests
+
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true); // => true
+
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false); // => false
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false); // => false
