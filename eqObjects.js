@@ -1,22 +1,5 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const eqArrays = function(arrayA, arrayB) {
-  if (arrayA.length !== arrayB.length) {
-    return false;
-  }
-  for (let i = 0; i < arrayA.length; i++) {
-    if (arrayA[i] !== arrayB[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require('./eqArrays');
 
 /*
   function eqObjects(a, b):
@@ -71,14 +54,14 @@ const eqObjects = (objectA, objectB) => {
 
 // // object tests
 
-const nestedObjA = { a: { b: "1"}, c: 2 };
-const nestedObjB = { c: 2, a: { b: "1"} };
-const nestedObjC = { a: { b: "2"}, c: 2 };
-assertEqual(eqObjects(nestedObjA, nestedObjB), true);
-assertEqual(eqObjects(nestedObjA, nestedObjC), false);
+// const nestedObjA = { a: { b: "1"}, c: 2 };
+// const nestedObjB = { c: 2, a: { b: "1"} };
+// const nestedObjC = { a: { b: "2"}, c: 2 };
+// assertEqual(eqObjects(nestedObjA, nestedObjB), true);
+// assertEqual(eqObjects(nestedObjA, nestedObjC), false);
 
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
+// assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
 
 module.exports = eqObjects;
