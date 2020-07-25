@@ -16,3 +16,5 @@ const head = function(array) {
 assertEqual(2, head([2,3,4]));
 assertEqual("house", head(["house","apartment","condo"]));
 assertEqual(undefined, head([]));
+
+module.exports = head;

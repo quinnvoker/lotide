@@ -34,3 +34,5 @@ const result = countLetters(testString);
 assertEqual(result.Q, 1);
 assertEqual(result.n, 3);
 assertEqual(result.t, undefined);
+
+module.exports = countLetters;

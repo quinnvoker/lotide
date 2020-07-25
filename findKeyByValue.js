@@ -31,3 +31,5 @@ const family = {
 
 assertEqual(findKeyByValue(family, "Joe"), "father");
 assertEqual(findKeyByValue(family, "Rowan"), "child");
+
+module.exports = findKeyByValue;

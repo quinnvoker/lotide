@@ -21,3 +21,5 @@ const assertArraysEqual = function(actual, expected) {
 
 assertArraysEqual(['hello', 'world'], ['hello', 'world']);
 assertArraysEqual([12, 36, 64], [12, 36, 64]);
+
+module.exports = assertArraysEqual;

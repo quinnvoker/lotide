@@ -37,3 +37,5 @@ const scores = {
 assertEqual(findKey(player, stat => stat % 10 === 0), 'mp');
 assertEqual(findKey(meals, meal => meal === 'steak'), 'dinner');
 assertEqual(findKey(scores, score => score > 90), 'angela');
+
+module.exports = findKey;

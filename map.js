@@ -47,3 +47,5 @@ const people = [
 assertArraysEqual(map(people, person => person.name), ['Jason', 'Tom', 'Frieda']);
 assertArraysEqual(map([1, 2, 3], num => num * 5), [5, 10, 15]);
 assertArraysEqual(map(['hello', 'world'], word => word.slice(0, 2)), ['he', 'wo']);
+
+module.exports = map;

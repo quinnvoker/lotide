@@ -48,3 +48,5 @@ const testShort = ['hello', 'world'];
 assertArraysEqual(middle(testEven), [2, 3]);
 assertArraysEqual(middle(testOdd), [3]);
 assertArraysEqual(middle(testShort), []);
+
+module.exports = middle;

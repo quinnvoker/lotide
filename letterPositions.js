@@ -52,3 +52,5 @@ assertArraysEqual(positions.h, [0]);
 assertArraysEqual(positions.e, [1]);
 assertArraysEqual(positions.l, [2, 3]);
 assertArraysEqual(positions.o, [4]);
+
+module.exports = letterPositions;
