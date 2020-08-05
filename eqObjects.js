@@ -1,17 +1,3 @@
-const assertEqual = require('./assertEqual');
-const eqArrays = require('./eqArrays');
-
-/*
-  function eqObjects(a, b):
-    if a keys and b keys do not have the same length
-      return false
-    loop through a keys:
-      if a key's value is different from b key
-        return false
-    return true
-    
-*/
-
 const eqObjects = (objectA, objectB) => {
   if (Object.keys(objectA).length !== Object.keys(objectB).length) {
     return false;
@@ -32,36 +18,5 @@ const eqObjects = (objectA, objectB) => {
   }
   return true;
 };
-
-
-// primitive tests
-
-// const ab = { a: "1", b: "2" };
-// const ba = { b: "2", a: "1" };
-// assertEqual(eqObjects(ab, ba), true);
-
-
-// const abc = { a: "1", b: "2", c: "3" };
-// assertEqual(eqObjects(ab, abc), false);
-
-// array tests
-
-// const cd = { c: "1", d: ["2", 3] };
-// const dc = { d: ["2", 3], c: "1" };
-// assertEqual(eqObjects(cd, dc), true);
-// const cd2 = { c: "1", d: ["2", 3, 4] };
-// assertEqual(eqObjects(cd, cd2), false);
-
-// // object tests
-
-// const nestedObjA = { a: { b: "1"}, c: 2 };
-// const nestedObjB = { c: 2, a: { b: "1"} };
-// const nestedObjC = { a: { b: "2"}, c: 2 };
-// assertEqual(eqObjects(nestedObjA, nestedObjB), true);
-// assertEqual(eqObjects(nestedObjA, nestedObjC), false);
-
-// assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
-// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
-// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
 
 module.exports = eqObjects;
