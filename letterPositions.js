@@ -1,16 +1,3 @@
-const assertArraysEqual = require('./assertArraysEqual');
-
-/*
-  function letterPositions(string):
-    result = {};
-    for character in string (with index i)
-      if result does not have character
-        add [i] to character property
-      else
-        push i to character property
-    return result
-*/
-
 const letterPositions = (string) => {
   const result = {};
   for (let i = 0; i < string.length; i++) {
@@ -26,12 +13,5 @@ const letterPositions = (string) => {
   }
   return result;
 };
-
-const testString = 'hello ';
-const positions = letterPositions(testString);
-assertArraysEqual(positions.h, [0]);
-assertArraysEqual(positions.e, [1]);
-assertArraysEqual(positions.l, [2, 3]);
-assertArraysEqual(positions.o, [4]);
 
 module.exports = letterPositions;
