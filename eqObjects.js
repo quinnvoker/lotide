@@ -1,3 +1,5 @@
+const eqArrays = require('./eqArrays');
+
 const eqObjects = (objectA, objectB) => {
   if (Object.keys(objectA).length !== Object.keys(objectB).length) {
     return false;
